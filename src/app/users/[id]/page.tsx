@@ -1,5 +1,14 @@
-const fetchUser = async (id: string) => {
-  const res = await fetch(`/api/users/${id}`);
+import { getBaseUrl } from '@/lib/api';
+import { User } from '@/types/user';
+import { notFound } from 'next/navigation';
+
+const fetchUser = async (id: string): Promise<User> => {
+  const baseUrl = await getBaseUrl();
+  const res = await fetch(`${baseUrl}/api/users/${id}`);
+
+  if (res.status === 404) {
+    notFound();
+  }
 
   if (!res.ok) {
     throw new Error(`Failed to load user (${res.status})`);
