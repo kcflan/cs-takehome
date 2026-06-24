@@ -4,7 +4,6 @@ import { User } from '@/types/user';
 
 const fetchUsers = async () => {
   const baseUrl = await getBaseUrl();
-
   const res = await fetch(`${baseUrl}/api/users`);
 
   if (!res.ok) {
