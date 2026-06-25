@@ -17,14 +17,18 @@ export default async function Home() {
   const users = await fetchUsers();
 
   return (
-    <main className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-zinc-50 p-8 text-center dark:bg-black">
-      <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">CS - User Directory</h1>
-      <p className="mt-1 text-gray-500 dark:text-gray-400">{users.length} users · select one to view their profile</p>
-      {users.map((user: UserSummary) => (
-        <div key={user.id}>
-          <UserCard user={user} />
+    <main className="min-h-dvh bg-zinc-50 p-8">
+      <div className="mx-auto max-w-5xl">
+        <header className="mb-8 text-center">
+          <h1 className="text-3xl font-semibold tracking-tight text-black">CouchSurfing - User Directory</h1>
+          <p className="mt-1 text-gray-500">{users.length} users · select one to view their profile</p>
+        </header>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {users.map((user: UserSummary) => (
+            <UserCard key={user.id} user={user} />
+          ))}
         </div>
-      ))}
+      </div>
     </main>
   );
 }

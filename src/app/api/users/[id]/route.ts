@@ -1,4 +1,5 @@
-import { getUserById } from '@/lib/users';
+import { getFriends, getUserById } from '@/lib/users';
+import { UserDetail } from '@/types/user';
 import { NextResponse } from 'next/server';
 
 /**
@@ -19,5 +20,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     return NextResponse.json({ error: 'User not found' }, { status: 404 });
   }
 
-  return NextResponse.json(user);
+  // Return the full user profile, plus a list of their friends as summaries.
+  const detail: UserDetail = { ...user, friends: getFriends(userId) };
+
+  return NextResponse.json(detail);
 }

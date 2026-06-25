@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User Directory
+
+A small Next.js app that lists users and lets you drill into each one's full profile. Built with the App Router and Tailwind CSS. User data is mocked (seeded from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)) and served through internal API routes.
+
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router)
+- React 19
+- Tailwind CSS 4
+- TypeScript
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the directory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How it works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Directory** (`/`) — a server component fetches `/api/users` and renders a grid of `UserCard`s. Each card links to a detail page.
+- **Profile** (`/users/[id]`) — fetches `/api/users/[id]` and renders the user's contact, address, and company details. Unknown ids render a 404 via `notFound()`.
+- **Data layer** — `src/data/users.ts` holds the mock records. `src/lib/users.ts` projects them to a lightweight summary for the list and looks up full profiles by id.
+- **Fetching from server components** — `src/lib/api.ts` derives the request origin from incoming headers so `fetch` works locally and behind a proxy without a hardcoded URL.
 
-## Learn More
+## API
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Method | Route             | Description                                              |
+| ------ | ----------------- | ------------------------------------------------------- |
+| `GET`  | `/api/users`      | List all users as summaries, sorted by name.            |
+| `GET`  | `/api/users/[id]` | Full profile for one user. `400` if the id is invalid, `404` if not found. |

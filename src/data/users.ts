@@ -4,6 +4,7 @@ import { User } from '@/types/user';
 export const users: User[] = [
   {
     id: 1,
+    friendIds: [2, 3, 5],
     name: 'Leanne Graham',
     username: 'Bret',
     email: 'Sincere@april.biz',
@@ -27,6 +28,7 @@ export const users: User[] = [
   },
   {
     id: 2,
+    friendIds: [4],
     name: 'Ervin Howell',
     username: 'Antonette',
     email: 'Shanna@melissa.tv',
@@ -50,6 +52,7 @@ export const users: User[] = [
   },
   {
     id: 3,
+    friendIds: [6, 7],
     name: 'Clementine Bauch',
     username: 'Samantha',
     email: 'Nathan@yesenia.net',
@@ -73,6 +76,7 @@ export const users: User[] = [
   },
   {
     id: 4,
+    friendIds: [],
     name: 'Patricia Lebsack',
     username: 'Karianne',
     email: 'Julianne.OConner@kory.org',
@@ -96,6 +100,7 @@ export const users: User[] = [
   },
   {
     id: 5,
+    friendIds: [8],
     name: 'Chelsey Dietrich',
     username: 'Kamren',
     email: 'Lucio_Hettinger@annie.ca',
@@ -119,6 +124,7 @@ export const users: User[] = [
   },
   {
     id: 6,
+    friendIds: [9],
     name: 'Mrs. Dennis Schulist',
     username: 'Leopoldo_Corkery',
     email: 'Karley_Dach@jasper.info',
@@ -142,6 +148,7 @@ export const users: User[] = [
   },
   {
     id: 7,
+    friendIds: [],
     name: 'Kurtis Weissnat',
     username: 'Elwyn.Skiles',
     email: 'Telly.Hoeger@billy.biz',
@@ -165,6 +172,7 @@ export const users: User[] = [
   },
   {
     id: 8,
+    friendIds: [10],
     name: 'Nicholas Runolfsdottir V',
     username: 'Maxime_Nienow',
     email: 'Sherwood@rosamond.me',
@@ -188,6 +196,7 @@ export const users: User[] = [
   },
   {
     id: 9,
+    friendIds: [10],
     name: 'Glenna Reichert',
     username: 'Delphine',
     email: 'Chaim_McDermott@dana.io',
@@ -211,6 +220,7 @@ export const users: User[] = [
   },
   {
     id: 10,
+    friendIds: [],
     name: 'Clementina DuBuque',
     username: 'Moriah.Stanton',
     email: 'Rey.Padberg@karina.biz',
