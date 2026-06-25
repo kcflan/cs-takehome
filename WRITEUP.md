@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a small Next.js appn that displays a directory of users and allows a user to to view individual user profiles. User data is mocked and exposed through Next.js API routes. I also implemented the optional friends feature, so each profile includes links to that user's (hardcoded) friends.
+This is a small Next.js app that displays a directory of users and allows a user to to view individual user profiles. User data is mocked and exposed through Next.js API routes. I also implemented the optional friends feature, so each profile includes links to that user's (hardcoded) friends.
 
 **Tech Stack:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4
 
