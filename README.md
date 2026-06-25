@@ -20,6 +20,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the directory.
 
+## Deployment
+
+Open [https://cs-takehome.netlify.app/](https://cs-takehome.netlify.app/) to view the deployed app.
+
 ## How it works
 
 - **Directory** (`/`) — a server component fetches `/api/users` and renders a grid of `UserCard`s. Each card links to a detail page.

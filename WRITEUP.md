@@ -107,5 +107,10 @@ Given more time, I'd focus on a few improvements:
 - Add loading and error states to improve the user experience.
 - Move the mock data into a database-backed implementation while keeping the existing API contract intact.
 - Add pagination if the user dataset grows significantly.
+- Add more CSS styling
 
 Overall, I focused on building a straightforward, maintainable solution that satisfies the requirements while keeping the code organized and easy to extend with a modular design that I prefer.
+
+## Deployment
+
+Open [https://cs-takehome.netlify.app/](https://cs-takehome.netlify.app/) to view the deployed app.
